@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo sed -i "s/denied/granted/g" /etc/apache2/sites-available/000-default.conf
-sudo systemctl restart apache2
+sudo sed  -i  's/Require all denied/Allow from all/i'  /etc/apache2/sites-enabled/000-default.conf
+#restart the service
+sudo service apache2 restart
